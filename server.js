@@ -9,8 +9,12 @@ const bookRoutes = require('./routes/bookRoutes');
 const app = express();
 
 // ✅ Fix CORS to allow your frontend
+const allowedOrigins = [
+  'https://library-frontend-sigma-tawny.vercel.app', // your frontend production URL
+];
+
 app.use(cors({
-  origin: 'https://library-frontend-sigma-tawny.vercel.app',
+  origin: allowedOrigins,
   credentials: true
 }));
 
